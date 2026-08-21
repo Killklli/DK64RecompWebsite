@@ -1,0 +1,10 @@
+{
+  "github_sources": [
+    {
+      "enabled": true,
+      "repo": "Killklli/DK64TagAnywhereRecomp",
+      "zip_containing_nrm": "dk64_tag_anywhere.zip"
+    }
+  ],
+  "output_file": "mods.json"
+}

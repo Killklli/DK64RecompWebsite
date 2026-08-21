@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Browse community mods for DK64 Rekongpiled."
+    />
+    <title>Mods | DK64 Rekongpiled</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/Logo.png" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link href="styles/landing.css" rel="stylesheet" />
+    <link href="styles/mods.css" rel="stylesheet" />
+  </head>
+  <body id="top">
+    <nav
+      class="navbar navbar-expand-lg fixed-top site-navbar"
+      aria-label="Main navigation"
+    >
+      <div class="container px-4">
+        <a class="navbar-brand" href="index.html">DK64 Rekongpiled</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#setup">Setup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#community">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="mods.html"
+                >Mods</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-hero text-white text-center">
+      <div class="hero-overlay"></div>
+      <div class="container px-4">
+        <h1>Mod Registry</h1>
+        <p class="lead">
+          Browse community-made mods for DK64 Rekongpiled. Install through the
+          in-game mod discovery page, or grab the download links below.
+
+          <br />
+          The mods on this page are not officially supported by the DK64
+          Rekongpiled team. Please contact the mod authors for support.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section id="mods" class="section-block">
+        <div class="container px-4">
+          <div class="mods-toolbar">
+            <div class="search-wrap">
+              <label class="visually-hidden" for="modSearch">Search mods</label>
+              <input
+                type="search"
+                id="modSearch"
+                class="mod-search"
+                placeholder="Search mods by name, author, or description..."
+                autocomplete="off"
+              />
+            </div>
+            <div class="mods-count" id="modsCount">Loading mods...</div>
+          </div>
+
+          <div class="mod-grid" id="modGrid"></div>
+          <p class="no-results d-none" id="noResults">
+            No mods matched your search.
+          </p>
+          <p class="mods-error d-none" id="modsError">
+            Couldn't load the mod list right now. Please try again later.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal fade"
+      id="modDetailModal"
+      tabindex="-1"
+      aria-labelledby="modDetailTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content mod-modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modDetailTitle"></h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mod-modal-top">
+              <img id="modDetailImg" alt="" class="mod-modal-img" />
+              <div class="mod-modal-meta">
+                <p class="mod-author" id="modDetailAuthor"></p>
+                <span class="mod-version" id="modDetailVersion"></span>
+              </div>
+            </div>
+            <p class="mod-modal-desc" id="modDetailDesc"></p>
+          </div>
+          <div class="modal-footer">
+            <a
+              id="modDetailDownload"
+              class="btn btn-success rounded-pill text-dark"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container px-4">
+        <p>DK64 Rekongpiled</p>
+        <p class="small-note">
+          <br />
+          Recomp made by Rainchus and Ballaam, with thanks to Wiseguy and
+          Dariosamo for the Recompiled Framework.
+          <br />
+          In-game characters, images and logos copyright © 1999-2026 Nintendo or
+          Rareware respectively.
+          <br />
+          dk64recomp.com does not distribute copyright material.
+          <br />
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/mods.js"></script>
+  </body>
+</html>
