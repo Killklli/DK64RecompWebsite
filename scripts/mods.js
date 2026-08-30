@@ -13,15 +13,6 @@
 
   let mods = [];
 
-  function parseKey(key, mod) {
-    if (key.includes("/")) {
-      const [author, name] = key.split("/");
-      return { author, title: name.replace(/_/g, " ").trim() || "Unknown Mod" };
-    }
-    const fallback = mod.id || key || "Unknown Mod";
-    return { author: "Unknown", title: fallback.replace(/_/g, " ").trim() };
-  }
-
   function showDetail(mod) {
     detail.title.textContent = mod.title;
     detail.img.src = mod.thumbnail || "img/Logo.png";
@@ -66,7 +57,11 @@
     img.onerror = () => (img.src = "img/Logo.png");
 
     card.querySelector("h3").textContent = mod.title;
-    card.querySelector(".mod-author").textContent = `by ${mod.author}`;
+    const author = mod.author || "";
+    const authorEl = card.querySelector(".mod-author");
+    const suffix = author.length > 20 ? "..." : "";
+    authorEl.textContent = `by ${author.slice(0, 20)}${suffix}`;
+    authorEl.title = author;
     card.querySelector(".mod-desc").textContent =
       mod.short_description || "No description provided.";
 
@@ -141,7 +136,8 @@
           const mod = raw || {};
           return {
             key,
-            ...parseKey(key, mod),
+            title: key || "Unknown Mod",
+            author: mod.authors || "Unknown",
             version: mod.version || "",
             short_description: mod.short_description || "",
             thumbnail: mod.thumbnail_url || mod.thumbnail_image || "",

@@ -142,7 +142,7 @@ def main() -> None:
             "id": mod_id,
             "game_id": game_id,
             "thumbnail_image": thumbnail,
-            "author": ", ".join(mod_info.get("authors", [])),
+            "authors": ", ".join(mod_info.get("authors", [])),
         }
 
     for source in config.get("thunderstore_sources", []):
@@ -229,6 +229,7 @@ def main() -> None:
                 "id": mod_id,
                 "game_id": game_id,
                 "thumbnail_url": icon_url,
+                "authors": ", ".join(pkg.get("authors", [])),
             }
 
     out_path = Path(__file__).parent / output_file
