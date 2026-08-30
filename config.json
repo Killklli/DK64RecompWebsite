@@ -9,6 +9,11 @@
       "enabled": true,
       "repo": "theballaam96/DK64AllKongStart",
       "zip_containing_nrm": "dk64_start_with_kongs.zip"
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompEasierBeetle",
+      "zip_containing_nrm": "slower_beetle.zip"
     }
   ],
   "output_file": "mods.json"
