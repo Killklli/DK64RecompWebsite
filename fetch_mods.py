@@ -142,6 +142,7 @@ def main() -> None:
             "id": mod_id,
             "game_id": game_id,
             "thumbnail_image": thumbnail,
+            "author": ", ".join(mod_info.get("authors", [])),
         }
 
     for source in config.get("thunderstore_sources", []):
