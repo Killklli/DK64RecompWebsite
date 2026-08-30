@@ -14,6 +14,11 @@
       "enabled": true,
       "repo": "theballaam96/RecompEasierBeetle",
       "zip_containing_nrm": "slower_beetle.zip"
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompFixedBeaverBother",
+      "zip_containing_nrm": "fixed_beaver_bother.zip"
     }
   ],
   "output_file": "mods.json"
