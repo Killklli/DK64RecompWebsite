@@ -19,6 +19,11 @@
       "enabled": true,
       "repo": "theballaam96/RecompFixedBeaverBother",
       "zip_containing_nrm": "fixed_beaver_bother.zip"
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompNoCompanyCoins",
+      "zip_containing_nrm": "no_company_coins.zip"
     }
   ],
   "output_file": "mods.json"
