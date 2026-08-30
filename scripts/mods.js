@@ -26,7 +26,7 @@
     detail.title.textContent = mod.title;
     detail.img.src = mod.thumbnail || "img/Logo.png";
     detail.img.alt = `${mod.title} icon`;
-    detail.author.textContent = `by ${mod.author}`;
+    detail.author.textContent = `by ${mod.authors.join(", ")}`;
     detail.version.textContent = mod.version ? `v${mod.version}` : "";
     detail.version.classList.toggle("d-none", !mod.version);
     detail.desc.textContent =
@@ -66,7 +66,7 @@
     img.onerror = () => (img.src = "img/Logo.png");
 
     card.querySelector("h3").textContent = mod.title;
-    card.querySelector(".mod-author").textContent = `by ${mod.author}`;
+    card.querySelector(".mod-author").textContent = `by ${mod.authors.join(", ")}`;
     card.querySelector(".mod-desc").textContent =
       mod.short_description || "No description provided.";
 
@@ -119,7 +119,7 @@
     const query = $("modSearch").value.trim().toLowerCase();
     const filtered = query
       ? mods.filter((mod) =>
-          `${mod.title} ${mod.author} ${mod.short_description}`
+          `${mod.title} ${mod.authors.join(", ")} ${mod.short_description}`
             .toLowerCase()
             .includes(query),
         )
