@@ -9,9 +9,16 @@
     version: $("modDetailVersion"),
     desc: $("modDetailDesc"),
     download: $("modDetailDownload"),
+    repo: $("modDetailRepo"),
   };
 
   let mods = [];
+
+  function getRepoUrl(fileUrl) {
+    if (!fileUrl) return "";
+    if (fileUrl.indexOf("github.com/") == -1) return "";
+    return fileUrl.substring(0, fileUrl.indexOf("/releases"));
+  }
 
   function showDetail(mod) {
     detail.title.textContent = mod.title;
@@ -25,6 +32,9 @@
     detail.download.href = mod.file_url;
     detail.download.target = "_blank";
     detail.download.rel = "noopener noreferrer";
+    detail.repo.href = mod.repo_url;
+    detail.repo.target = "_blank";
+    detail.repo.rel = "noopener noreferrer";
     detail.modal.show();
   }
 
@@ -142,6 +152,7 @@
             short_description: mod.short_description || "",
             thumbnail: mod.thumbnail_url || mod.thumbnail_image || "",
             file_url: mod.file_url || "",
+            repo_url: getRepoUrl(mod.file_url),
           };
         })
         .sort((a, b) =>
