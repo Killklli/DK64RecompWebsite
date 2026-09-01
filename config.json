@@ -24,6 +24,11 @@
       "enabled": true,
       "repo": "theballaam96/RecompNoCompanyCoins",
       "zip_containing_nrm": "no_company_coins.zip"
+    },
+    {
+      "enabled": true,
+      "repo": "fewffwa/recomp-unlock-extras-menu",
+      "nrm_file": "unlock_mystery_menu.nrm"
     }
   ],
   "output_file": "mods.json"
