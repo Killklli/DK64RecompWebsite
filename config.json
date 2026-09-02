@@ -29,6 +29,11 @@
       "enabled": true,
       "repo": "fewffwa/recomp-unlock-extras-menu",
       "nrm_file": "unlock_mystery_menu.nrm"
+    },
+    {
+      "enabled": true,
+      "repo": "fewffwa/OpenIsles",
+      "nrm_file": "OpenIsles.nrm"
     }
   ],
   "output_file": "mods.json"
