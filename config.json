@@ -38,7 +38,7 @@
     {
       "enabled": true,
       "repo": "LT-Schmiddy/zelda64recomp-python-extlibs-mod",
-      "zip_containing_nrm": "RecompExternalPython_for_DonkeyKong64Recompiled.zip"
+      "zip_containing_nrm": "RecompExternalPython_for_DonkeyKong64Recompiled.thunderstore.zip"
      }
   ],
   "output_file": "mods.json"
