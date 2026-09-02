@@ -39,7 +39,12 @@
       "enabled": true,
       "repo": "LT-Schmiddy/zelda64recomp-python-extlibs-mod",
       "zip_containing_nrm": "RecompExternalPython_for_DonkeyKong64Recompiled.thunderstore.zip"
-     }
+     },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompInfiniteArcadeLives",
+      "nrm_file": "infinite_arcade_lives.nrm"
+    }
   ],
   "output_file": "mods.json"
 }
