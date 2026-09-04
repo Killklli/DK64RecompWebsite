@@ -1,0 +1,29 @@
+name: Validate external PR
+
+on:
+  pull_request:
+    paths:
+      - "config.json"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test mods.json
+        run: python fetch_mods.py --validate

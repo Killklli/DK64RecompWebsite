@@ -1,3 +1,4 @@
+import argparse
 import base64
 import io
 import json
@@ -11,8 +12,20 @@ THUNDERSTORE_API = "https://thunderstore.io"
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--validate", action="store_true")
+    args = parser.parse_args()
+
     with open("config.json", encoding="utf-8") as fh:
         config = json.load(fh)
+
+    approved_tags = {tag.lower() for tag in config.get("approved_tags", [])}
+
+    for source in config.get("github_sources", []):
+        tags = source.get("tags", [])
+        source_name = source.get("repo") or "github_sources"
+        if not all(tag.lower() in approved_tags for tag in tags):
+            raise ValueError(f"Unapproved tag in {source_name}")
 
     all_mods = {}
     output_file = config.get("output_file", "mods.json")
@@ -25,6 +38,7 @@ def main() -> None:
         if not repo:
             continue
 
+        tags = source.get("tags", [])
         nrm_file = source.get("nrm_file", "")
         zip_name = source.get("zip_containing_nrm", "")
         token = os.environ.get("GITHUB_TOKEN")
@@ -141,6 +155,7 @@ def main() -> None:
             "version": version,
             "id": mod_id,
             "game_id": game_id,
+            "tags": tags,
             "thumbnail_image": thumbnail,
             "authors": ", ".join(mod_info.get("authors", [])),
         }
@@ -228,9 +243,21 @@ def main() -> None:
                 "version": version,
                 "id": mod_id,
                 "game_id": game_id,
+                "tags": pkg_tags,
                 "thumbnail_url": icon_url,
                 "authors": ", ".join(pkg.get("authors", [])),
             }
+
+    if args.validate:
+        repos = [source["repo"].lower() for source in config.get("github_sources", []) if source.get("enabled", True) and source.get("repo")]
+
+        missing = []
+        for repo in repos:
+            if not any(repo in str(mod.get("file_url", "")).lower() for mod in all_mods.values()):
+                missing.append(repo)
+
+        if missing:
+            raise ValueError(missing)
 
     out_path = Path(__file__).parent / output_file
     with open(out_path, "w", encoding="utf-8") as fh:

@@ -90,6 +90,23 @@
                 autocomplete="off"
               />
             </div>
+            <div class="mod-tag-filter dropdown">
+              <button
+                type="button"
+                id="modTagToggle"
+                class="mod-search mod-tag-select dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                All tags
+              </button>
+              <div
+                id="modTagMenu"
+                class="dropdown-menu mod-tag-menu"
+                role="menu"
+                aria-label="Select tags to filter mods"
+              ></div>
+            </div>
             <div class="mods-count" id="modsCount">Loading mods...</div>
           </div>
 
@@ -130,6 +147,7 @@
                 <span class="mod-version" id="modDetailVersion"></span>
               </div>
             </div>
+            <div class="mod-tags mod-modal-tags" id="modDetailTags"></div>
             <p class="mod-modal-desc" id="modDetailDesc"></p>
           </div>
           <div class="modal-footer">
