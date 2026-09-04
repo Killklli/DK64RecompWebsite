@@ -49,6 +49,11 @@
       "enabled": true,
       "repo": "theballaam96/RecompFastBoot",
       "nrm_file": "fast_boot.nrm"
+    },
+    {
+      "enabled": true,
+      "repo": "fewffwa/K-Rool-Challenge",
+      "nrm_file": "KRoolChallenge.nrm"
     }
   ],
   "output_file": "mods.json"
