@@ -36,7 +36,7 @@
     detail.tags.innerHTML = tagMarkup;
     detail.tags.classList.toggle("d-none", !tagMarkup);
     detail.desc.textContent =
-      mod.short_description || "No description provided.";
+      mod.full_description || "No description provided.";
     detail.download.href = mod.file_url;
     detail.download.target = "_blank";
     detail.download.rel = "noopener noreferrer";
@@ -236,6 +236,7 @@
             author: mod.authors || "Unknown",
             version: mod.version || "",
             short_description: mod.short_description || "",
+            full_description: mod.description || "",
             thumbnail: mod.thumbnail_url || mod.thumbnail_image || "",
             file_url: mod.file_url || "",
             repo_url: getRepoUrl(mod.file_url),

@@ -145,6 +145,7 @@ def main() -> None:
         mod_id = mod_info.get("id") or display_name.lower().replace(" ", "_")
         game_id = mod_info.get("game_id", "")
         short_desc = mod_info.get("short_description") or mod_info.get("description", "")
+        full_desc = mod_info.get("description", "")
         if not short_desc:
             body = release.get("body") or ""
             short_desc = body.split("\n")[0].strip()
@@ -152,6 +153,7 @@ def main() -> None:
         all_mods[display_name] = {
             "file_url": file_url,
             "short_description": short_desc,
+            "description": full_desc,
             "version": version,
             "id": mod_id,
             "game_id": game_id,
