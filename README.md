@@ -24,12 +24,14 @@ Mod sources are configured in `config.json`:
 
 ```json
 {
+  "approved_tags": ["feature", "qol", "dependency"],
   "github_sources": [
     {
       "enabled": true,
       "repo": "YourOrg/YourModRepo",
       "nrm_file": "your_mod.nrm",
-      "zip_containing_nrm": "YourMod.zip"
+      "zip_containing_nrm": "YourMod.zip",
+      "tags": ["feature"]
     }
   ],
   "thunderstore_sources": [
@@ -53,10 +55,12 @@ Mod sources are configured in `config.json`:
 
 | Field | Required | Description |
 |---|---|---|
+| `approved_tags` | No | Allowlist of tags that source entries are allowed to use. |
 | `enabled` | No | Set to `false` to skip this source. Defaults to `true`. |
 | `repo` | **Yes** | GitHub repository in `owner/repo` format. |
 | `nrm_file` | No | Exact filename of the `.nrm` asset to prefer. |
 | `zip_containing_nrm` | No | Exact filename of a `.zip` that contains the `.nrm` inside. |
+| `tags` | No | Related tags for the mod. Must be in the `approved_tags` list. |
 
 Asset selection priority: `zip_containing_nrm` -> `nrm_file` -> any `.nrm` -> any `.zip`.
 

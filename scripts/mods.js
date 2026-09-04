@@ -8,11 +8,13 @@
     author: $("modDetailAuthor"),
     version: $("modDetailVersion"),
     desc: $("modDetailDesc"),
+    tags: $("modDetailTags"),
     download: $("modDetailDownload"),
     repo: $("modDetailRepo"),
   };
 
   let mods = [];
+  let selectedTags = [];
 
   function getRepoUrl(fileUrl) {
     if (!fileUrl) return "";
@@ -27,6 +29,12 @@
     detail.author.textContent = `by ${mod.author}`;
     detail.version.textContent = mod.version ? `v${mod.version}` : "";
     detail.version.classList.toggle("d-none", !mod.version);
+    const tagMarkup = (mod.tags || [])
+      .filter(Boolean)
+      .map((tag) => `<span class="mod-tag">${tag}</span>`)
+      .join("");
+    detail.tags.innerHTML = tagMarkup;
+    detail.tags.classList.toggle("d-none", !tagMarkup);
     detail.desc.textContent =
       mod.short_description || "No description provided.";
     detail.download.href = mod.file_url;
@@ -55,6 +63,7 @@
         </div>
         <p class="mod-author"></p>
         <p class="mod-desc"></p>
+        <div class="mod-tags"></div>
       </div>
       <div class="mod-footer">
         <a class="btn btn-success btn-sm rounded-pill text-dark">Download</a>
@@ -74,6 +83,17 @@
     authorEl.title = author;
     card.querySelector(".mod-desc").textContent =
       mod.short_description || "No description provided.";
+
+    const tagsList = card.querySelector(".mod-tags");
+    const tagMarkup = (mod.tags || [])
+      .filter(Boolean)
+      .map((tag) => `<span class="mod-tag">${tag}</span>`)
+      .join("");
+    if (tagMarkup) {
+      tagsList.innerHTML = tagMarkup;
+    } else {
+      tagsList.remove();
+    }
 
     const versionEl = card.querySelector(".mod-version");
     if (mod.version) versionEl.textContent = `v${mod.version}`;
@@ -108,6 +128,50 @@
     if (mod) showDetail(mod);
   });
 
+  function updateTagToggleLabel() {
+    if (selectedTags.length === 0) {
+      $("modTagToggle").textContent = "All tags";
+      return;
+    }
+
+    $("modTagToggle").textContent = selectedTags.join(", ");
+  }
+
+  function populateTagFilter() {
+    const menu = $("modTagMenu");
+    const allTags = [];
+    mods.forEach((mod) => {
+      mod.tags.forEach((tag) => {
+        if (!allTags.includes(tag)) allTags.push(tag);
+      });
+    });
+    allTags.sort();
+
+    menu.innerHTML = "";
+    allTags.forEach((tag) => {
+      const label = document.createElement("label");
+      label.className = "mod-tag-option";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = tag;
+      checkbox.checked = selectedTags.includes(tag);
+
+      const text = document.createElement("span");
+      text.textContent = tag;
+
+      label.appendChild(checkbox);
+      label.appendChild(text);
+      menu.appendChild(label);
+    });
+
+    if (allTags.length === 0) {
+      menu.innerHTML = '<span class="mod-tag-option">No tags available</span>';
+    }
+
+    updateTagToggleLabel();
+  }
+
   function render(list) {
     $("modGrid").replaceChildren(...list.map(makeCard));
     $("noResults").classList.toggle("d-none", list.length !== 0);
@@ -122,18 +186,35 @@
 
   function applyFilter() {
     const query = $("modSearch").value.trim().toLowerCase();
-    const filtered = query
-      ? mods.filter((mod) =>
-          `${mod.title} ${mod.author} ${mod.short_description}`
-            .toLowerCase()
-            .includes(query),
-        )
-      : mods;
+    const filtered = mods.filter((mod) => {
+      const modTags = mod.tags || [];
+      const searchText =
+        `${mod.title} ${mod.author} ${mod.short_description} ${modTags.join(" ")}`.toLowerCase();
+      const matchesSearch = !query || searchText.includes(query);
+      const matchesTags =
+        selectedTags.length === 0 ||
+        selectedTags.every((tag) => modTags.includes(tag));
+      return matchesSearch && matchesTags;
+    });
+
     render(filtered);
     updateCount(filtered.length, mods.length);
   }
 
   $("modSearch").addEventListener("input", applyFilter);
+
+  $("modTagMenu").addEventListener("change", (event) => {
+    const input = event.target;
+
+    if (input.checked) {
+      selectedTags.push(input.value);
+    } else {
+      selectedTags = selectedTags.filter((tag) => tag !== input.value);
+    }
+
+    updateTagToggleLabel();
+    applyFilter();
+  });
 
   async function loadMods() {
     try {
@@ -144,6 +225,11 @@
       mods = Object.entries(data)
         .map(([key, raw]) => {
           const mod = raw || {};
+          const tags = Array.isArray(mod.tags)
+            ? mod.tags
+                .map((tag) => String(tag).trim().toLowerCase())
+                .filter(Boolean)
+            : [];
           return {
             key,
             title: key || "Unknown Mod",
@@ -153,12 +239,14 @@
             thumbnail: mod.thumbnail_url || mod.thumbnail_image || "",
             file_url: mod.file_url || "",
             repo_url: getRepoUrl(mod.file_url),
+            tags,
           };
         })
         .sort((a, b) =>
           a.title.localeCompare(b.title, undefined, { sensitivity: "base" }),
         );
 
+      populateTagFilter();
       render(mods);
       updateCount(mods.length, mods.length);
     } catch (err) {

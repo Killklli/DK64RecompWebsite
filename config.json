@@ -1,59 +1,79 @@
 {
+  "approved_tags": [
+    "accessibility",
+    "cosmetic",
+    "casual",
+    "feature",
+    "fix",
+    "qol",
+    "dependency"
+  ],
   "github_sources": [
     {
       "enabled": true,
       "repo": "Killklli/DK64TagAnywhereRecomp",
-      "zip_containing_nrm": "dk64_tag_anywhere.zip"
+      "zip_containing_nrm": "dk64_tag_anywhere.zip",
+      "tags": ["feature", "qol", "casual"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/DK64AllKongStart",
-      "zip_containing_nrm": "dk64_start_with_kongs.zip"
+      "zip_containing_nrm": "dk64_start_with_kongs.zip",
+      "tags": ["casual"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/RecompEasierBeetle",
-      "zip_containing_nrm": "slower_beetle.zip"
+      "zip_containing_nrm": "slower_beetle.zip",
+      "tags": ["casual"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/RecompFixedBeaverBother",
-      "zip_containing_nrm": "fixed_beaver_bother.zip"
+      "zip_containing_nrm": "fixed_beaver_bother.zip",
+      "tags": ["fix", "casual"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/RecompNoCompanyCoins",
-      "zip_containing_nrm": "no_company_coins.zip"
+      "zip_containing_nrm": "no_company_coins.zip",
+      "tags": ["casual"]
     },
     {
       "enabled": true,
       "repo": "fewffwa/recomp-unlock-extras-menu",
-      "nrm_file": "unlock_mystery_menu.nrm"
+      "nrm_file": "unlock_mystery_menu.nrm",
+      "tags": ["feature"]
     },
     {
       "enabled": true,
       "repo": "fewffwa/OpenIsles",
-      "nrm_file": "OpenIsles.nrm"
+      "nrm_file": "OpenIsles.nrm",
+      "tags": ["feature"]
     },
     {
       "enabled": true,
       "repo": "LT-Schmiddy/zelda64recomp-python-extlibs-mod",
-      "zip_containing_nrm": "RecompExternalPython_for_DonkeyKong64Recompiled.thunderstore.zip"
+      "zip_containing_nrm": "RecompExternalPython_for_DonkeyKong64Recompiled.thunderstore.zip",
+      "tags": ["dependency"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/RecompInfiniteArcadeLives",
-      "nrm_file": "infinite_arcade_lives.nrm"
+      "nrm_file": "infinite_arcade_lives.nrm",
+      "tags": ["casual"]
     },
     {
       "enabled": true,
       "repo": "theballaam96/RecompFastBoot",
-      "nrm_file": "fast_boot.nrm"
+      "nrm_file": "fast_boot.nrm",
+      "tags": ["qol"]
     },
     {
       "enabled": true,
       "repo": "fewffwa/K-Rool-Challenge",
-      "nrm_file": "KRoolChallenge.nrm"
+      "nrm_file": "KRoolChallenge.nrm",
+      "tags": ["feature"]
     }
   ],
   "output_file": "mods.json"

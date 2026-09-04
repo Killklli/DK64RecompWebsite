@@ -89,6 +89,34 @@
   white-space: nowrap;
 }
 
+.mod-tag-filter {
+  flex: 0 1 210px;
+}
+
+.mod-tag-select {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-tag-menu {
+  min-width: 100%;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.mod-tag-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  color: var(--ink);
+}
+
+.mod-tag-option input {
+  accent-color: var(--brand-green);
+}
+
 .mod-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -207,6 +235,28 @@
   overflow: hidden;
 }
 
+.mod-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.mod-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(82, 117, 93, 0.32);
+  border: 1px solid rgba(139, 163, 151, 0.3);
+  color: #dfeee1;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
 .mod-footer {
   padding: 0.6rem 0.8rem 0.8rem;
 }
@@ -262,6 +312,10 @@
   flex-direction: column;
   gap: 0.4rem;
   align-items: flex-start;
+}
+
+.mod-modal-tags {
+  margin-bottom: 0.75rem;
 }
 
 .mod-modal-desc {
