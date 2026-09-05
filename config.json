@@ -74,6 +74,12 @@
       "repo": "fewffwa/K-Rool-Challenge",
       "nrm_file": "KRoolChallenge.nrm",
       "tags": ["feature"]
+    },
+    {
+      "enabled": true,
+      "repo": "UmedMuzl/RecompRemoveDetransBarrier",
+      "nrm_file": "no_detransformation_barriers.nrm ",
+      "tags":["casual"]
     }
   ],
   "output_file": "mods.json"
