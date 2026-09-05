@@ -79,7 +79,7 @@
       "enabled": true,
       "repo": "UmedMuzl/RecompRemoveDetransBarrier",
       "nrm_file": "no_detransformation_barriers.nrm ",
-      "tags":["feature"]
+      "tags":["casual"]
     }
   ],
   "output_file": "mods.json"
