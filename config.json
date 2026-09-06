@@ -80,6 +80,12 @@
       "repo": "UmedMuzl/RecompRemoveDetransBarrier",
       "nrm_file": "no_detransformation_barriers.nrm ",
       "tags":["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "amrgames00/dk64-mouse-camera",
+      "zip_containing_nrm": "mouse_camera.zip",
+      "tags": ["feature", "qol"]
     }
   ],
   "output_file": "mods.json"
