@@ -11,6 +11,29 @@ import requests
 THUNDERSTORE_API = "https://thunderstore.io"
 
 
+def make_thumbnail_data(zf, filename: str) -> str:
+    try:
+        data = zf.read(filename)
+    except Exception:
+        return ""
+
+    if filename.lower().endswith(".png"):
+        encoded = base64.b64encode(data).decode("utf-8")
+        return f"data:image/png;base64,{encoded}"
+
+    try:
+        from PIL import Image
+
+        img = Image.open(io.BytesIO(data))
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
+        return f"data:image/png;base64,{encoded}"
+    except Exception:
+        encoded = base64.b64encode(data).decode("utf-8")
+        return f"data:image/x-dds;base64,{encoded}"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--validate", action="store_true")
@@ -103,19 +126,11 @@ def main() -> None:
                             mod_json = inner_names.get("mod.json")
                             if mod_json:
                                 mod_info = json.loads(inner_zf.read(mod_json).decode("utf-8"))
-                            dds_file = inner_names.get("thumb.dds")
-                            if dds_file:
-                                try:
-                                    from PIL import Image
-
-                                    img = Image.open(io.BytesIO(inner_zf.read(dds_file)))
-                                    buf = io.BytesIO()
-                                    img.save(buf, format="PNG")
-                                    encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
-                                    thumbnail = f"data:image/png;base64,{encoded}"
-                                except Exception:
-                                    encoded = base64.b64encode(inner_zf.read(dds_file)).decode("utf-8")
-                                    thumbnail = f"data:image/x-dds;base64,{encoded}"
+                            for candidate_name in ("thumb.dds", "thumb.png"):
+                                thumb_file = inner_names.get(candidate_name)
+                                if thumb_file:
+                                    thumbnail = make_thumbnail_data(inner_zf, thumb_file)
+                                    break
                     except zipfile.BadZipFile:
                         pass
                 else:
@@ -124,18 +139,9 @@ def main() -> None:
                             mod_info = json.loads(outer_zf.read(name).decode("utf-8"))
                             break
                     for name in outer_zf.namelist():
-                        if name.lower() == "thumb.dds":
-                            try:
-                                from PIL import Image
-
-                                img = Image.open(io.BytesIO(outer_zf.read(name)))
-                                buf = io.BytesIO()
-                                img.save(buf, format="PNG")
-                                encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
-                                thumbnail = f"data:image/png;base64,{encoded}"
-                            except Exception:
-                                encoded = base64.b64encode(outer_zf.read(name)).decode("utf-8")
-                                thumbnail = f"data:image/x-dds;base64,{encoded}"
+                        lower_name = name.lower()
+                        if lower_name in {"thumb.dds", "thumb.png"}:
+                            thumbnail = make_thumbnail_data(outer_zf, name)
                             break
         except zipfile.BadZipFile:
             continue
