@@ -6,7 +6,8 @@
     "feature",
     "fix",
     "qol",
-    "dependency"
+    "dependency",
+    "texture-pack"
   ],
   "github_sources": [
     {
@@ -85,7 +86,17 @@
       "enabled": true,
       "repo": "ChromiusMixin/faithful-dk-arcade",
       "zip_containing_nrm": "faithful_dk_arcade.zip",
-      "tags":["casual"]
+      "tags": ["casual", "texture-pack"]
+    },
+    {
+      "repo": "geoffhuntsgood/gb-dance-skips",
+      "nrm_file": "gb_dance_skips.nrm",
+      "tags": ["casual"]
+    },
+    {
+      "repo": "UmedMuzl/Recomp-Exit-To-Isles",
+      "nrm_file": "dk64_exit_to_isles",
+      "tags": ["qol"]
     }
   ],
   "output_file": "mods.json"
