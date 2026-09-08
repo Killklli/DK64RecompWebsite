@@ -83,6 +83,11 @@
     },
     {
       "enabled": true,
+      "repo": "geoffhuntsgood/gb-dance-skips",
+      "nrm_file": "gb_dance_skips.nrm",
+      "tags": ["casual"]
+    },
+    {
       "repo": "UmedMuzl/Recomp-Exit-To-Isles",
       "nrm_file": "dk64_exit_to_isles",
       "tags": ["qol"]
