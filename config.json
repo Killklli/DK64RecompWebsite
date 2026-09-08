@@ -80,6 +80,12 @@
       "repo": "UmedMuzl/RecompRemoveDetransBarrier",
       "nrm_file": "no_detransformation_barriers.nrm ",
       "tags":["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "UmedMuzl/Recomp-Exit-To-Isles",
+      "nrm_file": "dk64_exit_to_isles",
+      "tags": ["qol"]
     }
   ],
   "output_file": "mods.json"
