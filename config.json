@@ -80,6 +80,12 @@
       "repo": "UmedMuzl/RecompRemoveDetransBarrier",
       "nrm_file": "no_detransformation_barriers.nrm ",
       "tags":["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "ChromiusMixin/faithful-dk-arcade",
+      "zip_containing_nrm": "faithful_dk_arcade.zip",
+      "tags":["casual"]
     }
   ],
   "output_file": "mods.json"
