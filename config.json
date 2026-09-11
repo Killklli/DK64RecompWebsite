@@ -105,6 +105,12 @@
       "repo": "UmedMuzl/mini-dk64-recomp",
       "nrm_file": "mini-dk64",
       "tags": ["feature"]
+    },
+    {
+      "enabled": true,
+      "repo": "UmedMuzl/lanky-arms",
+      "nrm_file": "lanky_arms",
+      "tags": ["cosmetic"]
     }
   ],
   "output_file": "mods.json"
