@@ -105,6 +105,24 @@
       "repo": "UmedMuzl/mini-dk64-recomp",
       "nrm_file": "mini-dk64",
       "tags": ["feature"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompFrench",
+      "nrm_file": "translation_french",
+      "tags": ["language", "casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompGerman",
+      "nrm_file": "translation_german",
+      "tags": ["language", "casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompSpanish",
+      "nrm_file": "translation_spanish",
+      "tags": ["language", "casual"]
     }
   ],
   "output_file": "mods.json"
