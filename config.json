@@ -109,6 +109,12 @@
     },
     {
       "enabled": true,
+      "repo": "UmedMuzl/lanky-arms",
+      "nrm_file": "lanky_arms",
+      "tags": ["cosmetic"]
+    },
+    {
+      "enabled": true,
       "repo": "theballaam96/RecompFrench",
       "nrm_file": "translation_french",
       "tags": ["language", "casual"]
