@@ -7,7 +7,8 @@
     "fix",
     "qol",
     "dependency",
-    "texture-pack"
+    "texture-pack",
+    "language"
   ],
   "github_sources": [
     {
@@ -111,6 +112,24 @@
       "repo": "UmedMuzl/lanky-arms",
       "nrm_file": "lanky_arms",
       "tags": ["cosmetic"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompFrench",
+      "nrm_file": "translation_french",
+      "tags": ["language", "casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompGerman",
+      "nrm_file": "translation_german",
+      "tags": ["language", "casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompSpanish",
+      "nrm_file": "translation_spanish",
+      "tags": ["language", "casual"]
     }
   ],
   "output_file": "mods.json"
