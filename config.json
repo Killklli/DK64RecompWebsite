@@ -140,3 +140,9 @@
   ],
   "output_file": "mods.json"
 }
+{
+      "enabled": true,
+      "repo": "molinax0/dk64_day_night_cycle",
+      "nrm_file": "DayAndNight.nrm",
+      "tags": ["feature", "casual"]
+    }
