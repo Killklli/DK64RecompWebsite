@@ -130,6 +130,12 @@
       "repo": "theballaam96/RecompSpanish",
       "nrm_file": "translation_spanish",
       "tags": ["language", "casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "UmedMuzl/infinite-charge",
+      "nrm_file": "infinite_charge",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
