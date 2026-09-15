@@ -136,6 +136,12 @@
       "repo": "UmedMuzl/infinite-charge",
       "nrm_file": "infinite_charge",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/NoBubbleTextboxes",
+      "nrm_file": "no_bubble_textboxes",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
