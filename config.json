@@ -142,6 +142,12 @@
       "repo": "theballaam96/NoBubbleTextboxes",
       "nrm_file": "no_bubble_textboxes",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "cdalong/JetPacInfiniteLives",
+      "zip_containing_nrm": "infinite_jetpac_lives.zip",
+      "tags": ["casual", "qol"]
     }
   ],
   "output_file": "mods.json"
