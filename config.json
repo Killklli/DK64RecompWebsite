@@ -131,6 +131,12 @@
       "nrm_file": "translation_spanish",
       "tags": ["language", "casual"]
     },
+   {
+      "enabled": true,
+      "repo": "danilotec1-prog/RecompBrazilianPortuguese",
+      "nrm_file": "translation_ptbr",
+      "tags": ["language", "casual"]
+     },
     {
       "enabled": true,
       "repo": "UmedMuzl/infinite-charge",
