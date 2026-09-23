@@ -19,6 +19,12 @@
     },
     {
       "enabled": true,
+      "repo": "Killklli/DK64RecompMusicRando",
+      "nrm_file": "dk64_music_rando.nrm",
+      "tags": ["feature", "casual"]
+    },
+    {
+      "enabled": true,
       "repo": "theballaam96/DK64AllKongStart",
       "zip_containing_nrm": "dk64_start_with_kongs.zip",
       "tags": ["casual"]
