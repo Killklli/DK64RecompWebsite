@@ -154,6 +154,18 @@
       "repo": "cdalong/JetPacInfiniteLives",
       "zip_containing_nrm": "infinite_jetpac_lives.zip",
       "tags": ["casual", "qol"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompDanceButton",
+      "nrm_file": "dance_button",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompTAEffect",
+      "nrm_file": "tag_anywhere_sparkles",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
