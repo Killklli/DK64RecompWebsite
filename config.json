@@ -196,6 +196,12 @@
       "repo": "theballaam96/RecompAutocompleteBonuses",
       "nrm_file": "autocomplete_bonus",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompDiscoChunky",
+      "nrm_file": "disco_chunky",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
