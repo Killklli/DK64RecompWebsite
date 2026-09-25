@@ -166,6 +166,36 @@
       "repo": "theballaam96/RecompTAEffect",
       "nrm_file": "tag_anywhere_sparkles",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompSlowShoe",
+      "nrm_file": "slow_shoe",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompSlowDKPhase",
+      "nrm_file": "slow_dk_phase",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompDayNightCycle",
+      "nrm_file": "day_night_cycle",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompKeiperMode",
+      "nrm_file": "keiper_mode",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompAutocompleteBonuses",
+      "nrm_file": "autocomplete_bonus",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
