@@ -202,6 +202,12 @@
       "repo": "theballaam96/RecompDiscoChunky",
       "nrm_file": "disco_chunky",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "Nikamimi/DK64Rekong-RetroAchievements",
+      "zip_containing_nrm": "dk64-ra.zip",
+      "tags": ["feature"]
     }
   ],
   "output_file": "mods.json"
