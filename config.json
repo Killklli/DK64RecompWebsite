@@ -138,6 +138,12 @@
       "tags": ["language", "casual"]
     },
     {
+  "enabled": true,
+  "repo": "brigandier/RecompBrazilianPortuguese",
+  "nrm_file": "translation_ptbr.nrm",
+  "tags": ["language", "casual"]
+    },
+    {
       "enabled": true,
       "repo": "UmedMuzl/infinite-charge",
       "nrm_file": "infinite_charge",
