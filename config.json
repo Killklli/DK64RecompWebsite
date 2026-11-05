@@ -214,6 +214,24 @@
       "repo": "theballaam96/RecompFastWarp",
       "nrm_file": "fast_warp",
       "tags": ["casual", "qol"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompAudioLibrary",
+      "nrm_file": "audio_tools",
+      "tags": ["dependency"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompLankyNoise",
+      "nrm_file": "hajaga",
+      "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompLooneyTunesCharge",
+      "nrm_file": "looney_tunes_charge",
+      "tags": ["casual"]
     }
   ],
   "output_file": "mods.json"
