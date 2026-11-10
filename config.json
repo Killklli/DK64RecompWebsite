@@ -232,6 +232,12 @@
       "repo": "theballaam96/RecompLooneyTunesCharge",
       "nrm_file": "looney_tunes_charge",
       "tags": ["casual"]
+    },
+    {
+      "enabled": true,
+      "repo": "theballaam96/RecompActorExpansion",
+      "nrm_file": "actor_expansion",
+      "tags": ["dependency"]
     }
   ],
   "output_file": "mods.json"
